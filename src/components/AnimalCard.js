@@ -42,20 +42,3 @@ const AnimalCard = ({
 };
 
 export default AnimalCard;
-
-
-			{/* <div className="animal-card-wrapper">
-				{zooAnimal.map((animal) => (
-					<AnimalCard
-						name={animal.name}
-						latin={animal.latin_name}
-						type={animal.animal_type}
-						lifespan={animal.lifespan}
-						habitat={animal.habitat}
-						diet={animal.diet}
-						geographical={animal.geo_range}
-						image={animal.image_link}
-					/>
-				))}
-			</div> */}
-			{/* <Footer /> */}
