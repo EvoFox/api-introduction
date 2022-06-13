@@ -10,25 +10,25 @@ const App = () => {
 	const [error, setError] = useState(null);
 
 	// Code-along
-	useEffect(() => {
-		const fetchAnimals = async () => {
-			try {
-				const response = await fetch(
-					"https://zoo-animal-api.herokuapp.com/animals/rand/4"
-				);
-				if (!response.ok) {
-					throw new Error(response.statusText);
-				}
-				const data = await response.json();
-				setZooAnimal(data);
-				console.log(data);
-			} catch (error) {
-				console.log(error);
-				setError("Could not fetch the data.");
-			}
-		};
-		fetchAnimals();
-	}, []);
+	// useEffect(() => {
+	// 	const fetchAnimals = async () => {
+	// 		try {
+	// 			const response = await fetch(
+	// 				"https://zoo-animal-api.herokuapp.com/animals/rand/4"
+	// 			);
+	// 			if (!response.ok) {
+	// 				throw new Error(response.statusText);
+	// 			}
+	// 			const data = await response.json();
+	// 			setZooAnimal(data);
+	// 			console.log(data);
+	// 		} catch (error) {
+	// 			console.log(error);
+	// 			setError("Could not fetch the data.");
+	// 		}
+	// 	};
+	// 	fetchAnimals();
+	// }, []);
 
 	const [fox, setFox] = useState([]);
 	const [modal, setModal] = useState(false);
