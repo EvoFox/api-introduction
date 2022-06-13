@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
 
-
 const App = () => {
 	const [zooAnimal, setZooAnimal] = useState([]);
 	const [error, setError] = useState(null);
@@ -53,6 +52,7 @@ const App = () => {
 		};
 		fetchFox();
 	}, []);
+
 	const openModal = () => {
 		setModal((prev) => !prev);
 	};
