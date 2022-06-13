@@ -1,3 +1,8 @@
+# API introduction
+This project was an introduction in using external API's to grab and display data on a web application.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
