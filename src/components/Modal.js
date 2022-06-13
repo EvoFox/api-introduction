@@ -20,7 +20,7 @@ const Modal = ({ image, link, setModal }) => {
 						target="_blank"
 						onClick={() => setModal((prev) => !prev)}
 					>
-						Click here to share this fox!
+						Share this fox!
 					</a>
 				</div>
 				<button
