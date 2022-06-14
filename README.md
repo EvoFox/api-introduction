@@ -1,6 +1,8 @@
 # API introduction
 This project was an introduction in using external API's to grab and display data on a web application.
 
+The site can be previewed [here](https://modal-find-a-fox.netlify.app)
+
 ---
 
 # Getting Started with Create React App
