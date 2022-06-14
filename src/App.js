@@ -1,74 +1,74 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-// import AnimalCard from "./components/AnimalCard";
+import AnimalCard from "./components/AnimalCard";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Modal from "./components/Modal";
+// import Modal from "./components/Modal";
 
 const App = () => {
-	// const [zooAnimal, setZooAnimal] = useState([]);
+	const [zooAnimal, setZooAnimal] = useState([]);
 	const [error, setError] = useState(null);
 
 	// Code-along
-	// useEffect(() => {
-	// 	const fetchAnimals = async () => {
-	// 		try {
-	// 			const response = await fetch(
-	// 				"https://zoo-animal-api.herokuapp.com/animals/rand/4"
-	// 			);
-	// 			if (!response.ok) {
-	// 				throw new Error(response.statusText);
-	// 			}
-	// 			const data = await response.json();
-	// 			setZooAnimal(data);
-	// 			console.log(data);
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 			setError("Could not fetch the data.");
-	// 		}
-	// 	};
-	// 	fetchAnimals();
-	// }, []);
-
-	const [fox, setFox] = useState([]);
-	const [modal, setModal] = useState(false);
-
-	//Solo version, pulling from randomfox.ca/floof
-	// JSON data in this is {image} and {link}
 	useEffect(() => {
-		const fetchFox = async () => {
+		const fetchAnimals = async () => {
 			try {
-				const response = await fetch("https://randomfox.ca/floof/");
+				const response = await fetch(
+					"https://zoo-animal-api.herokuapp.com/animals/rand/4"
+				);
 				if (!response.ok) {
 					throw new Error(response.statusText);
 				}
 				const data = await response.json();
-				setFox(data);
+				setZooAnimal(data);
 				console.log(data);
 			} catch (error) {
 				console.log(error);
-				setError("Could not fetch the fox 😢");
+				setError("Could not fetch the data.");
 			}
 		};
-		fetchFox();
+		fetchAnimals();
 	}, []);
 
-	const openModal = () => {
-		setModal((prev) => !prev);
-	};
+	// const [fox, setFox] = useState([]);
+	// const [modal, setModal] = useState(false);
+
+	//Solo version, pulling from randomfox.ca/floof
+	// JSON data in this is {image} and {link}
+	// useEffect(() => {
+	// 	const fetchFox = async () => {
+	// 		try {
+	// 			const response = await fetch("https://randomfox.ca/floof/");
+	// 			if (!response.ok) {
+	// 				throw new Error(response.statusText);
+	// 			}
+	// 			const data = await response.json();
+	// 			setFox(data);
+	// 			console.log(data);
+	// 		} catch (error) {
+	// 			console.log(error);
+	// 			setError("Could not fetch the fox 😢");
+	// 		}
+	// 	};
+	// 	fetchFox();
+	// }, []);
+
+	// const openModal = () => {
+	// 	setModal((prev) => !prev);
+	// };
 
 	return (
 		<div className="App">
 			<Header />
 			{error && <p>{error}</p>}
-			<button className="main-btn" onClick={openModal}>
+			{/* <button className="main-btn" onClick={openModal}>
 				Get a fox!
 			</button>
 			{modal ? (
 				<Modal image={fox.image} link={fox.image} setModal={setModal} />
-			) : null}
+			) : null} */}
 
-			{/* <div className="animal-card-wrapper">
+			<div className="animal-card-wrapper">
 				{zooAnimal.map((animal) => (
 					<AnimalCard
 						name={animal.name}
@@ -81,7 +81,7 @@ const App = () => {
 						image={animal.image_link}
 					/>
 				))}
-			</div> */}
+			</div>
 			<Footer />
 		</div>
 	);
