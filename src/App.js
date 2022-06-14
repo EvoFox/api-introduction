@@ -55,7 +55,7 @@ const App = () => {
 	const FoxButton = styled.button`
 		min-width: 100px;
 		max-height: 70px;
-		margin-top: 30px;
+		margin: auto;
 		padding: 16px 32px;
 		border-radius: 4px;
 		border: none;
@@ -98,9 +98,7 @@ const App = () => {
 
 			<Content>
 				{error && <p>{error}</p>}
-				<FoxButton onClick={openModal}>
-					Get a fox!
-				</FoxButton>
+				<FoxButton onClick={openModal}>Get a fox!</FoxButton>
 				{modal ? (
 					<Modal image={fox.image} link={fox.image} setModal={setModal} />
 				) : null}
