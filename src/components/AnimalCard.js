@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const AnimalCard = ({
 	name,
 	latin,
@@ -8,36 +10,72 @@ const AnimalCard = ({
 	geographical,
 	image,
 }) => {
+	// Styled Components
+	const Wrapper = styled.div`
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		width: 45%;
+		margin: 30px;
+		background-color: #ada7c9;
+		padding-bottom: 30px;
+		border-radius: 30px;
+	`;
+
+	const AnimalImg = styled.img`
+		width: 400px;
+		height: 400px;
+		object-fit: cover;
+
+		margin-top: 30px;
+		border-radius: 30px;
+	`;
+	const AnimalTable = styled.table`
+		margin: auto;
+		width: 80%;
+	`;
+
+	const AnimalTitle = styled.td`
+		width: 20%;
+		padding-top: 10px;
+	`;
+	const AnimalContent = styled.td`
+		width: 80%;
+	`;
+
 	return (
-		<div className="animal-card">
-			<img src={image} alt={type} />
+		<Wrapper>
+			<AnimalImg src={image} alt={type} />
 			<h2>{name}</h2>
-			<table>
+			<AnimalTable>
 				<tr>
-					<td className="title">Property</td>
-					<td className="title">Description</td>
+					<AnimalTitle>Property</AnimalTitle>
+					<AnimalContent>Description</AnimalContent>
 				</tr>
 				<tr>
-					<td className="title">Latin Name</td>
-					<td className="content">{latin}</td>
+					<AnimalTitle>Latin Name</AnimalTitle>
+					<AnimalContent>{latin}</AnimalContent>
 				</tr>
 				<tr>
-					<td className="title">Type of animal</td>
-					<td className="content">{type}</td>
+					<AnimalTitle>Type of animal</AnimalTitle>
+					<AnimalContent>{type}</AnimalContent>
 				</tr>
 				<tr>
-					<td className="title">Lifespan</td>
-					<td className="content">{lifespan} years</td>
+					<AnimalTitle>Lifespan</AnimalTitle>
+					<AnimalContent>{lifespan} years</AnimalContent>
 				</tr>
 				<tr>
-					<td className="title">Habitat and diet</td>
-					<td className="content">
+					<AnimalTitle>Habitat and diet</AnimalTitle>
+					<AnimalContent>
 						Lives in {habitat} and is most commonly found in {geographical}{" "}
 						where it eats {diet}
-					</td>
+					</AnimalContent>
 				</tr>
-			</table>
-		</div>
+			</AnimalTable>
+		</Wrapper>
 	);
 };
 
